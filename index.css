@@ -1,0 +1,41 @@
+
+body, html {
+    margin: 0;
+}
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    background-color: #32ae5d;
+    color: #fff;
+    padding: 1rem;
+}
+
+article {
+    padding: 1rem;
+}
+
+article > section > button {
+    margin: 0 5px;
+}
+
+button {
+    border-style: solid;
+    border-width: 0;
+    border-radius: 4px;
+    background-color: #32ae5d;
+    color: #fff;
+    padding: .4rem;
+}
+button:hover {
+    background-color: #23713e;
+    cursor: pointer;
+}
+
+p {
+    line-break: strict;
+    max-width: 30vw;
+}
+
