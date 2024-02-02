@@ -1,4 +1,3 @@
-
 <?php
 
 if(!defined('FROM_ADMIN'))
@@ -11,18 +10,21 @@ function action_start ($action, $args)
 {
     require_once './actions_registered.php';
 
-    if(array_key_exists($action, $registered_actions))
+    try
     {
-        $registered_actions[$action]();
-        return;
-    }
+        if(!array_key_exists($action, $registered_actions))
+        {
+            throw "Action not found";
+        }
 
-    header('HTTP/2 404 Not found');
-    echo json_encode(array('action' => 'NULL', 'args' => (object) array()));
-    die();
+        $registered_actions[$action]();
+    }
+    catch(Exception $ex)
+    {
+        header('HTTP/2 404 Not found');
+        echo json_encode(array('action' => $ex->getMessage(), 'args' => (object) array()));
+        die();
+    }
 }
 
 ?>
-
-
-

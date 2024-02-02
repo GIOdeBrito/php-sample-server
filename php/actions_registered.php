@@ -1,4 +1,3 @@
-
 <?php
 
 $registered_actions = array
@@ -19,9 +18,12 @@ $registered_actions = array
         require_once './function_getmessage.php';
         requested_message();
     },
+
+    'getsession' => function ()
+    {
+        require_once './function_session_key.php';
+        get_session_keys();
+    },
 );
 
 ?>
-
-
-

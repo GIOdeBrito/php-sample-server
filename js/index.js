@@ -30,6 +30,13 @@ function setControls ()
         let res = await HttpRequest('getmessage', { });
         window.jsonresponse.textContent = res.response;
     };
+
+    // Get session key
+    buttons[3].onclick = async () =>
+    {
+        let res = await HttpRequest('getsession', { });
+        window.jsonresponse.textContent = res.response;
+    };
 }
 
 

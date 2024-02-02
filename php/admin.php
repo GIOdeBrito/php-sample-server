@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST')
 {
@@ -12,6 +12,11 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST')
     header('HTTP/2 403 Forbidden');
     die("Request not from local");
 }*/
+
+if(!isset($_SESSION['localkey']))
+{
+    $_SESSION['localkey'] = md5(rand(10000,99999));
+}
 
 define('FROM_ADMIN', TRUE);
 
