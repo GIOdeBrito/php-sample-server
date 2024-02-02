@@ -1,10 +1,6 @@
 <?php
 
-if(!defined('FROM_ADMIN'))
-{
-    header('HTTP/3 403 Forbidden');
-    die("Permission not granted by admin");
-}
+require_once './include/admin_access_permission.php';
 
 function action_start ($action, $args)
 {

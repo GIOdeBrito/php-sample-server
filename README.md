@@ -14,3 +14,10 @@ Open the terminal and run the shell script located at the root directory.
 
 The `docker` build and run will take care of everything basically.
 Then open your your browser and access localhost on port 8080.
+
+Alternatively, one can inspect the microcosm of the application by running it
+together with bash.
+
+```bash
+docker run -it --rm php /bin/bash
+```
