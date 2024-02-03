@@ -13,7 +13,7 @@ function setControls ()
     // Get time
     buttons[0].onclick = async () =>
     {
-        let res = await HttpRequest('gettime', { });
+        let res = await HttpRequest('gettime');
         window.jsonresponse.textContent = res.response;
     };
 
@@ -27,14 +27,14 @@ function setControls ()
     // Get message
     buttons[2].onclick = async () =>
     {
-        let res = await HttpRequest('getmessage', { });
+        let res = await HttpRequest('getmessage');
         window.jsonresponse.textContent = res.response;
     };
 
     // Get session key
     buttons[3].onclick = async () =>
     {
-        let res = await HttpRequest('getsession', { });
+        let res = await HttpRequest('getsession');
         window.jsonresponse.textContent = res.response;
     };
 }

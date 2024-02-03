@@ -1,7 +1,6 @@
 
-var M_URL = 'php/admin.php';
 
-function HttpRequest (action, args, type = 'POST')
+function HttpRequest (action, args = {}, type = 'POST')
 {
     const fdata = new FormData();
 
@@ -9,8 +8,9 @@ function HttpRequest (action, args, type = 'POST')
     fdata.append('args', JSON.stringify(args));
     
     const xmlreq = new XMLHttpRequest();
+    const url = 'php/admin.php';
 
-    xmlreq.open(type, M_URL, true);
+    xmlreq.open(type, url, true);
     xmlreq.send(fdata);
 
     return new Promise(resolve =>
