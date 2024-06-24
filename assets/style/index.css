@@ -11,6 +11,9 @@ header {
     background-color: #32ae5d;
     color: #fff;
     padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
 article {

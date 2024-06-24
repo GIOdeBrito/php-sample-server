@@ -1,0 +1,11 @@
+
+## FILES TO IGNORE ## 
+
+README.md
+LICENSE
+Dockerfile
+docker-compose.yml
+
+## DIRECTORIES TO IGNORE ## 
+
+server/

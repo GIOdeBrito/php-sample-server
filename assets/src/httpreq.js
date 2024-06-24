@@ -1,5 +1,8 @@
 
 
+/* URL relative to the GitHub codespaces link */
+const URL = 'https://didactic-garbanzo-46gq4xrrwc5jww-3001.app.github.dev/';
+
 function HttpRequest (action, args = {}, type = 'POST')
 {
     const fdata = new FormData();
@@ -8,9 +11,9 @@ function HttpRequest (action, args = {}, type = 'POST')
     fdata.append('args', JSON.stringify(args));
     
     const xmlreq = new XMLHttpRequest();
-    const url = 'php/admin.php';
+    const requestAddress = URL + 'admin.php';
 
-    xmlreq.open(type, url, true);
+    xmlreq.open(type, requestAddress, true);
     xmlreq.send(fdata);
 
     return new Promise(resolve =>

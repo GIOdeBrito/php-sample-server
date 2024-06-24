@@ -1,23 +1,57 @@
 # PHP Sample Server
 
-This is a model repository for future PHP projects, and also to for practice.
+This is a model repository for future PHP personal projects and for studying.
 
-The repository was made to work on Github codespaces so Apache was not configured
+The repository was made to work on Github codespaces so Apache was not yet configured
 and PHP was already pre-installed.
 
-## Running
-Open the terminal and run the shell script located at the root directory.
+## Requirements
+
+- A Linux-running machine (Preferably)
+- Docker
+- Docker compose
+
+## Network
+
+Before running the application it is necessary to have their network up just so website
+and server may communicate with each other. 
+
+Make sure the network is created, if not, create it before moving onto the next section.
 
 ```bash
-./start_php.sh
+sudo docker network create sample-php-network
 ```
 
-The `docker` build and run will take care of everything basically.
-Then open your your browser and access localhost on port 8080.
-
-Alternatively, one can inspect the microcosm of the application by running it
-together with bash.
+Then, inspect the list of active networks.
 
 ```bash
-docker run -it --rm php /bin/bash
+sudo docker network ls
 ```
+
+The network ``sample-php-network`` will appear, much probably, at the very bottom.
+
+## Run
+
+To run the application, first build and prepare the images.
+
+```bash
+sudo docker-compose build 
+```
+
+Then, to run the containers, or to update the container with the new
+image, run the following command.
+
+```bash
+sudo docker-compose up -d
+```
+
+When necessary to stop the containers run the command below.
+
+```bash
+sudo docker-compose down
+```
+
+## CodeSpaces
+
+If you encounter the error of 'CORS is missing', or cannot make a request to the server.
+Set the ``port visibility`` on the ports to public.

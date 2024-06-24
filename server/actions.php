@@ -2,7 +2,7 @@
 
 require_once './include/admin_access_permission.php';
 
-function action_start ($action, $args)
+function action_start ($action, $args): void
 {
     require_once './actions_registered.php';
 

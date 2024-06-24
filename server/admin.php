@@ -1,18 +1,16 @@
 <?php
 
-session_start();
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: *");
 
 if($_SERVER['REQUEST_METHOD'] !== 'POST')
 {
-    header('HTTP/2 403 Forbidden');
+    header('HTTP/3 405 Method Not Allowed');
     die("Request method not allowed");
 }
 
-/*if($_SERVER['REMOTE_ADDR'] !== '127.0.0.1')
-{
-    header('HTTP/2 403 Forbidden');
-    die("Request not from local");
-}*/
+session_start();
 
 if(!isset($_SESSION['localkey']))
 {
